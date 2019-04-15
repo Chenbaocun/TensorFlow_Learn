@@ -1,0 +1,2 @@
+model_checkpoint_path: "CnnNetForMINIST.ckpt"
+all_model_checkpoint_paths: "CnnNetForMINIST.ckpt"
