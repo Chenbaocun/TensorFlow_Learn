@@ -5,7 +5,7 @@
 # @File : RNN.py
 # @Software: PyCharm
 
-# 使用RNN完成手写数字识别
+# 使用RNN完成手写数字识别，准确率只有60%左右，后续再改进吧
 
 import tensorflow as tf
 from tensorflow.python.ops.rnn import dynamic_rnn
@@ -109,3 +109,26 @@ with tf.Session() as sess:
     results = pd.Series(result.astype(int), name='Label')#如果数据数量不足总数的时候，astype会无效
     submission = pd.concat([pd.Series(range(1, 28001), name="ImageId"), results], axis=1)  # 拼接axis=1表示列拼接
     submission.to_csv("./MINISTDataset/RNN.csv", index=False)
+
+
+#
+# 第0次迭代，准确率为：0.13
+# 第50次迭代，准确率为：0.59
+# 第100次迭代，准确率为：0.59
+# 第150次迭代，准确率为：0.6
+# 第200次迭代，准确率为：0.6
+# 第250次迭代，准确率为：0.61
+# 第300次迭代，准确率为：0.62
+# 第350次迭代，准确率为：0.61
+# 第400次迭代，准确率为：0.59
+# 第450次迭代，准确率为：0.59
+# 第500次迭代，准确率为：0.59
+# 第550次迭代，准确率为：0.59
+# 第600次迭代，准确率为：0.59
+# 第650次迭代，准确率为：0.59
+# 第700次迭代，准确率为：0.59
+# 第750次迭代，准确率为：0.59
+# 第800次迭代，准确率为：0.59
+# 第850次迭代，准确率为：0.59
+# 第900次迭代，准确率为：0.59
+# 第950次迭代，准确率为：0.59
